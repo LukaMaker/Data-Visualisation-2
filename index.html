@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Average housing prices in Melbourne</title>
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.22.1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.5.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.21.0"></script>
+  
+  <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+
+  <title>Melbourne house sales from 2016 to end 2017</title>
+
+</head>
+<body>
+<div class="page">
+  <div class="pure-g">
+    <div class="pure-u-1-1">
+      <h1>Melbourne house sales Jan 2016 - Oct 2017</h1>
+    </div>
+  </div>
+  <div class="pure-g">
+    <div class="pure-u-1-2">
+      <div id="choropleth_map"></div>
+    </div>
+    <div class="pure-u-2-2">
+      <div id="bar"></div>
+    </div>
+  </div>
+  
+  
+  <div id="scatterplot"></div>
+  <div id="land_bar"></div>
+</div>
+
+<script type="text/javascript">
+
+  var spec2 = "vic_suburbs.json";
+  vegaEmbed('#choropleth_map', spec2).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  var spec3 = "scatterplot.json";
+  vegaEmbed('#scatterplot', spec3).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  var spec4 = "top_sellers_bar.json";
+  vegaEmbed('#bar', spec4).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  var spec5 = "topbar.json";
+  vegaEmbed('#land_bar', spec5).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+</script>
+
+</body>
+</html>

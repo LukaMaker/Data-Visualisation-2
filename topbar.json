@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 500,
+    "height": 200,
+    "title": "10 Highest Average Landsize Suburbs",
+    "data": {
+        "url": "data/otherone.csv"
+    },
+    "mark": "bar",
+    "encoding": {
+        "y": {
+            "field": "Top 10 Land",
+            "type": "nominal",
+            "sort": {"encoding": "x"}
+        },
+        "x": {
+            "field": "Average Landsize",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Top 10 Land",
+            "type": "nominal"
+        }
+    }
+}

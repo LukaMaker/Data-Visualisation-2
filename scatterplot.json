@@ -1,0 +1,30 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 500,
+    "height": 400,
+    "title": "House Price vs Date sold",
+    "data": {
+        "url": "data/Property_Sales_of_Melbourne_City.csv"
+    },
+    "mark": "circle",
+    "encoding": {
+        "x": {
+            "timeUnit": "binnedyearmonth", 
+            "field": "Date",
+            "type": "temporal",
+            "title": "Date Sold"
+        },
+        "y": {
+            "field": "Price",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "Price",
+            "scale": {
+                "type":"threshold",
+                "domain": [100000, 2000000, 3000000],
+                "range": [5, 10, 30]
+            }
+        }
+    }
+}
